@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Canton Developer Certification | The official Daml 3 certification</title>
+<meta name="description" content="The official Daml 3 certification for Canton developers. Free self-paced courses, four learning paths, one credential.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav dark">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Canton Developer Certification home">
+      <img src="assets/canton.svg" alt="Canton" width="118" height="30">
+      <span>Certification</span>
+    </a>
+    <ul>
+      <li><a href="#why-canton">Why Canton</a></li>
+      <li><a href="#daml">Daml</a></li>
+      <li><a href="#paths">Learning paths</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn btn-white btn-sm" href="https://daml.talentlms.com/plus/catalog?learningPath=1">Start learning</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero dark">
+    <div class="wrap">
+      <h1>Canton Developer Certification</h1>
+      <p class="sub">The official Daml 3 certification for Canton developers.</p>
+      <p class="lede">Learn the language behind the network where institutional finance runs on-chain. Pick the path that fits where you are today, work through free self-paced courses, and earn the credential the Canton ecosystem recognises.</p>
+      <div class="ctas">
+        <a class="btn btn-yellow" href="https://daml.talentlms.com/plus/catalog?learningPath=1">Start with Daml 3 Foundations</a>
+        <a class="btn btn-ghost" href="#path-d">Upgrade from Daml 2</a>
+      </div>
+      <div class="facts">
+        <div><strong>Free</strong>All courses</div>
+        <div><strong>$150</strong>Certification exam</div>
+        <div><strong>4 paths</strong>From first template to architecture</div>
+        <div><strong>Self-paced</strong>Learn on your schedule</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-canton">
+    <div class="wrap">
+      <h2>Why build on Canton?</h2>
+      <p class="intro">Canton is the public, permissionless blockchain built for regulated finance. It gives institutions the privacy and control they need, and gives builders the composability and open access they expect from a public network.</p>
+      <div class="why-grid">
+        <article>
+          <span class="mark" aria-hidden="true"></span>
+          <h3>Real assets, real volume</h3>
+          <p>Applications on Canton already process more than $6 trillion in on-chain assets, including over $280 billion in U.S. Treasury repo every day. This is where tokenized finance is happening at scale.</p>
+        </article>
+        <article>
+          <span class="mark" aria-hidden="true"></span>
+          <h3>Privacy built into the protocol</h3>
+          <p>Each party only sees the parts of a transaction they're entitled to see. Positions and counterparties stay private, while the network still guarantees everyone agrees on the outcome.</p>
+        </article>
+        <article>
+          <span class="mark" aria-hidden="true"></span>
+          <h3>Composable across the network</h3>
+          <p>Through the Global Synchronizer, apps run by different organisations settle atomically together. A tokenized bond on one app can be collateral on another and paid for with a stablecoin from a third, in one transaction.</p>
+        </article>
+        <article>
+          <span class="mark" aria-hidden="true"></span>
+          <h3>Builders get rewarded</h3>
+          <p>Canton's network economics reward the application providers and validators who create real activity. Build something people use, and the network is designed to pay you for it.</p>
+        </article>
+      </div>
+      <p class="who">Building alongside <b>Goldman Sachs, BNP Paribas, HSBC, Broadridge, Circle</b> and a growing ecosystem of market makers, custodians, wallets and stablecoin issuers.</p>
+    </div>
+  </section>
+
+  <section id="daml" class="daml dark">
+    <div class="wrap daml-grid">
+      <div>
+        <h2>What is Daml?</h2>
+        <p class="intro">Daml is the smart contract language for Canton. If Solidity is how you write contracts for the EVM, Daml is how you write them for Canton. It's built around one question other languages leave to you: who is allowed to do this, and who gets to see it?</p>
+        <ul>
+          <li><b>Signatories</b>must authorize a contract before it exists, so nobody can put obligations on you without your consent.</li>
+          <li><b>Observers</b>can see a contract without being bound by it.</li>
+          <li><b>Controllers</b>define exactly who can exercise each choice.</li>
+        </ul>
+        <p class="why3">Daml 3 runs on Canton 3.x, the stack behind today's Canton Network. It's what new projects should build on, and the version this certification covers.</p>
+      </div>
+      <figure class="code" aria-label="Example Daml 3 template">
+        <div class="bar"><span>TransferOffer.daml</span><span>Daml 3</span></div>
+<pre><span class="k">template</span> TransferOffer
+  <span class="k">with</span>
+    sender   : <span class="ty">Party</span>
+    receiver : <span class="ty">Party</span>
+    amount   : <span class="ty">Decimal</span>
+  <span class="k">where</span>
+    <span class="r">signatory</span> sender      <span class="c">-- sender must authorize</span>
+    <span class="r">observer</span> receiver    <span class="c">-- receiver can see it</span>
+
+    <span class="k">choice</span> Accept : <span class="ty">ContractId</span> Holding
+      <span class="r">controller</span> receiver  <span class="c">-- only receiver can accept</span>
+      <span class="k">do</span>
+        <span class="k">create</span> Holding <span class="k">with</span>
+          owner  = receiver
+          amount = amount</pre>
+        <figcaption class="cap">A transfer offer reads like the agreement it models. Canton enforces who signs, who sees and who acts at the protocol level.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cert" id="certification">
+    <div class="wrap cert-grid">
+      <div>
+        <h2>Why get certified?</h2>
+        <p class="intro">You can learn Daml without a certificate. The certification is for what comes next: proving it to the people who'll trust you with production systems.</p>
+      </div>
+      <div class="reasons">
+        <div><h3>Stand out to Canton employers and partners</h3><p>Institutions, app providers and node operators are hiring Daml talent. The certification gives them a clear, official signal of what you can do.</p></div>
+        <div><h3>Learn it right the first time</h3><p>Each path follows how Canton actually works: parties, authorization, privacy and testing. No piecing it together from scattered sources.</p></div>
+        <div><h3>Ship with confidence</h3><p>Certified developers know the patterns that hold up in production, and the authorization mistakes to avoid before you get there.</p></div>
+        <div><h3>Strengthen your grant or partnership case</h3><p>Applying for ecosystem funding or pitching a Canton integration? A certified team shows you can deliver.</p></div>
+        <div><h3>It's the official credential</h3><p>Backed by the Canton Foundation and aligned with the current Daml 3 stack.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="paths">
+    <div class="wrap">
+      <h2>Where to start?</h2>
+      <p class="intro">Most developers begin with Path A. If you already write Daml 2, go straight to Path D. Every path ends in its own certification exam. Select a path to jump to it.</p>
+
+      <div class="map" role="group" aria-label="Learning path map">
+        <svg viewBox="0 0 884 312" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, sans-serif">
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#A89F91"/></marker>
+          </defs>
+          <!-- starting points -->
+          <text x="20" y="96" fill="#A89F91" font-size="15">New to Canton</text>
+          <text x="20" y="266" fill="#A89F91" font-size="15">Daml 2 developer</text>
+          <line x1="152" y1="91" x2="222" y2="91" stroke="#A89F91" stroke-width="1.5" marker-end="url(#ar)"/>
+          <line x1="168" y1="261" x2="222" y2="261" stroke="#A89F91" stroke-width="1.5" marker-end="url(#ar)"/>
+          <!-- branches -->
+          <path d="M470 91 C 530 91, 530 50, 590 50" fill="none" stroke="#A89F91" stroke-width="1.5" marker-end="url(#ar)"/>
+          <path d="M470 91 C 530 91, 530 160, 590 160" fill="none" stroke="#A89F91" stroke-width="1.5" stroke-dasharray="5 5" marker-end="url(#ar)"/>
+          <!-- A -->
+          <a href="#path-a" aria-label="Path A: Daml 3 Foundations">
+            <rect class="node" x="226" y="56" width="244" height="70" rx="14" fill="#875CFF" stroke="#875CFF" stroke-width="1.5"/>
+            <text x="248" y="86" fill="#FFFFFC" font-size="13" font-weight="600" opacity=".85">PATH A</text>
+            <text x="248" y="110" fill="#FFFFFC" font-size="18" font-weight="600">Daml 3 Foundations</text>
+          </a>
+          <!-- B -->
+          <a href="#path-b" aria-label="Path B: Application Developer">
+            <rect class="node" x="594" y="16" width="270" height="70" rx="14" fill="#1A1430" stroke="#D5A5E3" stroke-opacity=".5" stroke-width="1.5"/>
+            <text x="616" y="46" fill="#D5A5E3" font-size="13" font-weight="600">PATH B</text>
+            <text x="616" y="70" fill="#FFFFFC" font-size="18" font-weight="600">Application Developer</text>
+          </a>
+          <!-- C -->
+          <a href="#path-c" aria-label="Path C: Solutions Architect, coming soon">
+            <rect class="node" x="594" y="126" width="270" height="70" rx="14" fill="#030206" stroke="#A89F91" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <text x="616" y="156" fill="#A89F91" font-size="13" font-weight="600">PATH C · COMING SOON</text>
+            <text x="616" y="180" fill="#FFFFFC" font-size="18" font-weight="600" opacity=".8">Solutions Architect</text>
+          </a>
+          <!-- D -->
+          <a href="#path-d" aria-label="Path D: Daml 2 to 3 Upgrade">
+            <rect class="node" x="226" y="226" width="244" height="70" rx="14" fill="#1A1430" stroke="#D5A5E3" stroke-opacity=".5" stroke-width="1.5"/>
+            <text x="248" y="256" fill="#D5A5E3" font-size="13" font-weight="600">PATH D</text>
+            <text x="248" y="280" fill="#FFFFFC" font-size="18" font-weight="600">Daml 2 → 3 Upgrade</text>
+          </a>
+          </svg>
+      </div>
+
+      <p class="group-label">New to Canton</p>
+      <div class="paths">
+        <article class="path solo" id="path-a">
+          <div class="inner">
+            <div>
+              <span class="letter">A</span>
+              <h3>Daml 3 Foundations</h3>
+              <dl class="meta"><dt>For</dt><dd>Any developer new to Canton</dd><dt>Prerequisite</dt><dd>None</dd></dl>
+            </div>
+            <div>
+              <p class="desc">The fastest route to certification. Learn the building blocks of every Canton app: templates, choices, parties, authorization, and testing with Daml Script. You'll finish able to read, write and test real Daml 3 code.</p>
+              <div class="links">
+                <a class="btn btn-dark" href="https://daml.talentlms.com/plus/catalog?learningPath=1">Start Path A</a>
+                <a class="btn btn-line" href="https://daml.talentlms.com/plus/catalog?courseId=191">Take the exam</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="group-label">Advanced</p>
+      <div class="paths">
+        <article class="path" id="path-b">
+          <span class="letter">B</span>
+          <h3>Daml 3 Application Developer</h3>
+          <dl class="meta"><dt>For</dt><dd>Engineers building production Canton apps</dd><dt>Prerequisite</dt><dd>Path A</dd></dl>
+          <p class="desc">Foundations teaches you to write contracts. This path teaches you to ship applications: end-to-end development on Daml 3, connecting contracts to backends and frontends through the Ledger API.</p>
+          <div class="links">
+            <a class="btn btn-dark" href="https://daml.talentlms.com/plus/catalog?learningPath=2">Start Path B</a>
+            <a class="btn btn-line" href="https://daml.talentlms.com/plus/catalog?courseId=192">Take the exam</a>
+          </div>
+        </article>
+        <article class="path soon" id="path-c">
+          <span class="letter">C</span>
+          <h3>Solutions Architect <span class="tag">Coming soon</span></h3>
+          <dl class="meta"><dt>For</dt><dd>Architects and technical leads at large institutions</dd><dt>Prerequisite</dt><dd>Path A</dd></dl>
+          <p class="desc">For the people designing Canton deployments: multi-party workflow modelling, deployment design, and integrating Canton into existing institutional systems. Courses and exam are in development.</p>
+        </article>
+      </div>
+
+      <p class="group-label">Upgrade</p>
+      <div class="paths">
+        <article class="path solo" id="path-d">
+          <div class="inner">
+            <div>
+              <span class="letter">D</span>
+              <h3>Daml 2 → 3 Upgrade</h3>
+              <dl class="meta"><dt>For</dt><dd>Existing Daml 2 developers and institutions</dd><dt>Prerequisite</dt><dd>Daml 2 experience</dd></dl>
+            </div>
+            <div>
+              <p class="desc">You already know Daml. This path covers what's changed in Daml 3 and Canton 3.x, so you can migrate your skills and codebases without starting over, and earn the current Daml 3 credential.</p>
+              <div class="links">
+                <a class="btn btn-dark" href="https://daml.talentlms.com/plus/catalog?learningPath=3">Start Path D</a>
+                <a class="btn btn-line" href="https://daml.talentlms.com/plus/catalog?courseId=193">Take the exam</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="d2note">Still on Daml 2? Daml 2 courses remain available for institutions that haven't migrated yet. New development should target Daml 3.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="cert">
+    <div class="wrap faq-grid">
+      <div>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div>
+        <details id="faq-cost"><summary>How much does it cost?</summary><div class="a">All courses are free. The certification exam costs $150.</div></details>
+        <details id="faq-coupon"><summary>Can I get the exam fee waived?</summary><div class="a">In some cases, yes. The Canton Foundation issues coupon codes that waive the exam fee, for example through ecosystem programs, events and partner teams.</div></details>
+        <details id="faq-first-path"><summary>Which path should I take first?</summary><div class="a">New to Canton or Daml? Start with Path A: Daml 3 Foundations. Already working with Daml 2? Take Path D: Daml 2 → 3 Upgrade.</div></details>
+        <details id="faq-prerequisites"><summary>Can I skip Path A and go straight to B or C?</summary><div class="a">Path A is the prerequisite for both. It covers the core concepts everything else depends on, so even experienced blockchain developers should start there.</div></details>
+        <details id="faq-solidity"><summary>I'm an Ethereum or Solidity developer. Is this for me?</summary><div class="a">Yes. Path A assumes no prior Canton experience. Contracts, tokens and transactions will feel familiar, but Canton's privacy and authorization model is different enough that Foundations will save you a lot of time.</div></details>
+        <details id="faq-daml2-vs-3"><summary>What's the difference between Daml 2 and Daml 3?</summary><div class="a">Daml 3 runs on Canton 3.x, which powers today's Canton Network and Global Synchronizer. Daml 2 targets earlier Canton versions. All new development and this certification track focus on Daml 3.</div></details>
+        <details id="faq-daml2-courses"><summary>Are Daml 2 courses still available?</summary><div class="a">Yes. They stay live for institutions still running Daml 2, but only the Daml 3 track is actively promoted for certification.</div></details>
+        <details id="faq-architect"><summary>When will the Solutions Architect path launch?</summary><div class="a">Path C and its exam are in development and coming soon.</div></details>
+        <details id="faq-self-paced"><summary>Are the courses self-paced?</summary><div class="a">Yes. Every course is online and self-paced, so you can learn around your own schedule.</div></details>
+        <details id="faq-help"><summary>Where can I get help while learning?</summary><div class="a">Ask questions in the <a href="https://forum.canton.network">Canton developer forum</a> and explore the official docs at <a href="https://docs.canton.network">docs.canton.network</a>.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing dark">
+    <div class="wrap">
+      <div>
+        <h2>Write your first Daml 3 contract today.</h2>
+        <p>Path A is free, self-paced and needs no prior Canton experience.</p>
+      </div>
+      <a class="btn btn-white" href="https://daml.talentlms.com/plus/catalog?learningPath=1">Start Daml 3 Foundations</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/canton.svg" alt="Canton" width="102" height="26">
+    <nav aria-label="Footer">
+      <a href="https://canton.foundation">Canton Foundation</a>
+      <a href="https://www.canton.network">Canton Network</a>
+      <a href="https://docs.canton.network">Docs</a>
+      <a href="https://forum.canton.network">Forum</a>
+    </nav>
+  </div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
