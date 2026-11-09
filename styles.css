@@ -20,7 +20,7 @@ a{color:inherit}
 section{padding:120px 0}
 @media (max-width:760px){section{padding:80px 0}}
 h1,h2,h3,h4{font-weight:700}
-.h2{font-size:clamp(38px,5.2vw,60px);line-height:1.04;letter-spacing:-.03em}
+.h2{font-size:clamp(38px,5.2vw,50px);line-height:1.04;letter-spacing:-.03em}
 .lead{font-size:19px;line-height:1.55;color:var(--body)}
 .dark .lead{color:var(--light-body)}
 .center{text-align:center}
@@ -53,9 +53,9 @@ h1,h2,h3,h4{font-weight:700}
 .hero::before{content:"";position:absolute;left:50%;top:-180px;width:1100px;height:620px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(90,61,209,.55),rgba(90,61,209,.18) 55%,transparent);pointer-events:none}
 .hero .wrap{position:relative}
 .hero h1{font-size:clamp(36px,7.4vw,78px);line-height:1.02;letter-spacing:-.035em;color:var(--light-text);max-width:25ch;margin:0 auto}
-.hero .sub{font-size:clamp(16px,3.9vw,36px);line-height:1.2;font-weight:600;letter-spacing:-.022em;color:var(--lilac);margin-top:16px}
+.hero .sub{font-size:clamp(16px,3.9vw,36px);line-height:1.2;font-weight:500;letter-spacing:-.022em;color:var(--lilac);margin-top:16px;max-width:900px;margin-left:auto;margin-right:auto;text-wrap:balance}
 .hero .lead-1{font-size:clamp(19px,1.9vw,22px);line-height:1.6;color:var(--light-lead);max-width:74ch;margin:42px auto 0}
-.hero .lead-2{font-size:17px;line-height:1.8;color:var(--light-2);max-width:53ch;margin:14px auto 0;margin-top:18px}
+.hero .lead-2{font-size:18px;line-height:1.8;color:var(--light-2);max-width:53ch;margin:14px auto 0;margin-top:18px}
 .hero .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);max-width:780px;margin:64px auto 0;padding-top:28px;border-top:1px solid var(--line-dark)}
 .facts div{padding:4px 16px}
@@ -146,8 +146,11 @@ h1,h2,h3,h4{font-weight:700}
 .facts-box dt{font-size:12px;font-weight:600;color:var(--purple)}
 .facts-box dd{font-size:16px;font-weight:500;line-height:1.35;margin-top:2px}
 .card .desc{margin-top:20px;color:var(--body)}
-.card .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.card .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;align-items:center}
+.earns{font-size:14px;font-weight:400;color:var(--muted)}
+.br-lg{display:none}
 .d2note{margin-top:24px;font-size:15px;color:var(--muted)}
+@media (min-width:1024px){.br-lg{display:inline}}
 @media (max-width:640px){.card{padding:24px}.card.wide{grid-template-columns:1fr;gap:20px}.facts-box{grid-template-columns:1fr}}
 
 /* 7 why certified */
