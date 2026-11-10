@@ -1,3 +1,6 @@
+// Initialize Vercel Web Analytics
+import './analytics.js';
+
 (function () {
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav ul a[href^="#"]'));
   var sections = links
