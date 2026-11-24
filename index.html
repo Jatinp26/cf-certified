@@ -10,9 +10,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-
 <header class="nav dark">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Canton Developer Certification home">
@@ -24,21 +27,18 @@
       <li><a href="#daml">Daml</a></li>
       <li><a href="#paths">Learning paths</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a class="btn" href="https://daml.talentlms.com/plus/catalog?learningPath=1">Start learning</a></li>
+      <li><a class="btn" href="https://daml.talentlms.com/plus/catalog?learningPath=1" data-track="nav_start_learning" data-path="A">Start learning</a></li>
     </ul>
   </div>
 </header>
-
 <main id="top">
-
-  <!-- 2 Hero -->
   <section class="hero dark">
     <div class="wrap">
       <h1>Canton Developer Certification</h1>
       <p class="sub">Learn to build applications on the Canton Network with Daml 3.</p>
       <p class="lead-1">Choose a learning path based on your experience and study at your own pace.</p>
       <div class="ctas">
-        <a class="btn btn-lime" href="https://daml.talentlms.com/plus/catalog?learningPath=1">Start with Daml 3 Foundations</a>
+        <a class="btn btn-lime" href="https://daml.talentlms.com/plus/catalog?learningPath=1" data-track="hero_start_foundations" data-path="A">Start with Daml 3 Foundations</a>
         <a class="btn btn-outline" href="#path-d">Upgrade from Daml 2</a>
       </div>
       <div class="facts">
@@ -48,8 +48,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 3 Why Build on Canton -->
   <section id="why-canton" class="why light">
     <div class="wrap">
       <h2 class="h2">Why build on the Canton Network?</h2>
@@ -78,8 +76,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 4 What Is Daml? -->
   <section id="daml" class="daml dark">
     <div class="wrap daml-grid">
       <div>
@@ -113,8 +109,6 @@
       </figure>
     </div>
   </section>
-
-  <!-- 5 Where to Start? -->
   <section id="paths" class="light">
     <div class="wrap">
       <div class="start-head">
@@ -123,7 +117,6 @@
           <p class="l2">Courses are free. Each certification exam costs US$150.<br>Select a path below to view its details.</p>
         </div>
       </div>
-
       <div class="selector">
         <div class="group">
           <h3>New to the Canton Network</h3>
@@ -148,8 +141,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 6 Path detail cards -->
   <section class="paths-detail light">
     <div class="wrap">
       <div class="group-head"><h2>New to the Canton Network?</h2></div>
@@ -161,8 +152,8 @@
             <dl class="facts-box"><div><dt>For</dt><dd>Developers new to the Canton Network</dd></div><div><dt>Prerequisite</dt><dd>None</dd></div></dl>
             <p class="desc">Learn to read, write, and test Daml 3 contracts. The course covers templates, choices, parties, authorization, and testing with Daml Script.</p>
             <div class="links">
-              <a class="btn btn-lime btn-sm" href="https://daml.talentlms.com/plus/catalog?learningPath=1">Start Path A</a>
-              <a class="btn btn-outline btn-sm" href="https://daml.talentlms.com/plus/catalog?courseId=191">Take the exam</a>
+              <a class="btn btn-lime btn-sm" href="https://daml.talentlms.com/plus/catalog?learningPath=1" data-track="path_a" data-path="A">Start Path A</a>
+              <a class="btn btn-outline btn-sm" href="https://daml.talentlms.com/plus/catalog?courseId=191" data-track="exam_a" data-path="A">Take the exam</a>
             </div>
           </div>
         </article>
@@ -175,8 +166,8 @@
           <dl class="facts-box"><div><dt>For</dt><dd>Engineers building production applications</dd></div><div><dt>Prerequisite</dt><dd>Path A</dd></div></dl>
           <p class="desc">Foundations teaches you to write contracts. This path teaches you to ship applications: end-to-end development on Daml 3, connecting contracts to backends and frontends through the Ledger API.</p>
           <div class="links">
-            <a class="btn btn-lime btn-sm" href="https://daml.talentlms.com/plus/catalog?learningPath=2">Start Path B</a>
-            <a class="btn btn-outline btn-sm" href="https://daml.talentlms.com/plus/catalog?courseId=192">Take the exam</a>
+            <a class="btn btn-lime btn-sm" href="https://daml.talentlms.com/plus/catalog?learningPath=2" data-track="path_b" data-path="B">Start Path B</a>
+            <a class="btn btn-outline btn-sm" href="https://daml.talentlms.com/plus/catalog?courseId=192" data-track="exam_b" data-path="B">Take the exam</a>
           </div>
         </article>
         <article class="card soon" id="path-c">
@@ -195,8 +186,8 @@
             <dl class="facts-box"><div><dt>For</dt><dd>Developers who have worked with Daml 2</dd></div><div><dt>Prerequisite</dt><dd>Daml 2 experience</dd></div></dl>
             <p class="desc">Already working with Daml 2? Learn what changed in Daml 3 and Canton 3.x and how those changes affect your existing applications.</p>
             <div class="links">
-              <a class="btn btn-lime btn-sm" href="https://daml.talentlms.com/plus/catalog?learningPath=3">Start the Daml 2 to 3 upgrade</a>
-              <a class="btn btn-outline btn-sm" href="https://daml.talentlms.com/plus/catalog?courseId=193">Take the exam</a>
+              <a class="btn btn-lime btn-sm" href="https://daml.talentlms.com/plus/catalog?learningPath=3" data-track="path_d" data-path="D">Start the Daml 2 to 3 upgrade</a>
+              <a class="btn btn-outline btn-sm" href="https://daml.talentlms.com/plus/catalog?courseId=193" data-track="exam_d" data-path="D">Take the exam</a>
             </div>
           </div>
         </article>
@@ -216,11 +207,9 @@
         <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m9 15 2 2 4-4"/></svg></span><div><h3>Working on the current stack</h3><p>Building with Daml 3 and Canton 3.x, the software behind the Canton Network today.</p></div></li>
         <li><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></svg></span><div><h3>Issued by Canton Foundation</h3><p>Each credential is issued by Canton Foundation.</p></div></li>
       </ul>
-      <div class="cta"><a class="btn btn-lime" href="https://daml.talentlms.com/plus/catalog?courseId=191">Take the exam</a></div>
+      <div class="cta"><a class="btn btn-lime" href="https://daml.talentlms.com/plus/catalog?courseId=191" data-track="certify_section_exam" data-path="A">Take the exam</a></div>
     </div>
   </section>
-
-  <!-- 8 FAQ -->
   <section id="faq" class="faq light center">
     <div class="wrap">
       <h2 class="h2">Frequently asked questions</h2>
@@ -234,8 +223,6 @@
       </div>
     </div>
   </section>
-
-  <!-- 9 Closing -->
   <section class="closing dark">
     <div class="wrap">
       <h3>Start building on the Canton Network</h3>
@@ -249,7 +236,6 @@
     </div>
   </section>
 </main>
-
 <footer>
   <div class="wrap">
     <img src="/assets/canton.svg" alt="Canton" width="102" height="26">
@@ -261,7 +247,7 @@
     </nav>
   </div>
 </footer>
-
 <script src="script.js" defer></script>
+<script src="analytics.js" defer></script>
 </body>
 </html>
